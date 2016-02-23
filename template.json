@@ -5,7 +5,9 @@
     },
     "variables": {
         "atlas_username": "{{env `ATLAS_USERNAME`}}",
-        "atlas_name": "{{env `ATLAS_NAME`}}"
+        "atlas_name": "{{env `ATLAS_NAME`}}",
+        "build_number": "{{env `ATLAS_BUILD_NUMBER`}}",
+        "build_timestamp": "{{isotime \"2006.01.02\"}}"
     },
     "provisioners": [
         {
@@ -107,7 +109,7 @@
             "artifact_type": "vagrant.box",
             "metadata": {
                 "provider": "virtualbox",
-                "version": "0.0.1"
+                "version": "{{user `build_timestamp`}}.{{user `build_number`}}"
             }
         }]
     ]
