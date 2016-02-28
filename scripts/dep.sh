@@ -7,11 +7,11 @@ apt-get -y update
 
 apt-get -y install curl python-software-properties
 
-wget -qO - http://packages.confluent.io/deb/2.0/archive.key | apt-key add -
+wget -qO - http://packages.confluent.io/deb/1.0/archive.key | apt-key add -
 
-add-apt-repository "deb http://packages.confluent.io/deb/2.0 stable main"
+add-apt-repository "deb [arch=all] http://packages.confluent.io/deb/1.0 stable main"
 
 apt-get -y update
 
-apt-get -y install --force-yes openjdk-7-jdk confluent-platform-2.11.7
+apt-get install confluent-platform-2.10.4
 
